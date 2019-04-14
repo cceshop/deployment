@@ -1,0 +1,8 @@
+---
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: cce
+  labels:
+    name: cce
+    istio-injection: enabled

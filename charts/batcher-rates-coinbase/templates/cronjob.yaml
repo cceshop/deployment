@@ -1,0 +1,19 @@
+---
+apiVersion: batch/v1beta1
+kind: CronJob
+metadata:
+  name: '{{ template "batcher-rates-coinbase.fullname" . }}'
+  namespace: '{{ .Values.deployment.namespace }}'
+spec:
+  schedule: "*/5 * * * *"
+  jobTemplate:
+    spec:
+      template:
+        metadata:
+          annotations:
+            sidecar.istio.io/inject: 'false'
+        spec:
+          containers:
+          - name: '{{ template "batcher-rates-coinbase.fullname" . }}'
+            image: '{{ .Values.image.repository }}:{{ .Values.image.tag }}'
+          restartPolicy: '{{ .Values.deployment.restartPolicy }}'

@@ -1,0 +1,24 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: batcher-rates-coinbase
+  namespace: cce
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.tearoom-menu: semver:1.*.*
+spec:
+  releaseName: batcher-rates-coinbase
+  chart:
+    git: ssh://git@github.com:cceshop/deployment.git   # ssh://git@lmc-bitbucket/archi/flux-example.git
+    ref: master
+    path: charts/batcher-rates-coinbase
+  values:
+    image:
+      repository: 'quay.io/cceshop/batcher-rates-coinbase'
+      tag: '1.0.0'
+      pullPolicy: Always
+    deployment:
+      name: batcher-rates-coinbase
+      namespace: cce
+      restartPolicy: OnFailure
