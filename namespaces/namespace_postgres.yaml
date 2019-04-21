@@ -5,3 +5,4 @@ metadata:
   name: postgres
   labels:
     name: postgres
+    istio-injection: enabled
