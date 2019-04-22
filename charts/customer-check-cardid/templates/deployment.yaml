@@ -22,5 +22,6 @@ spec:
       containers:
       - name: {{ .Values.deployment.name }}
         image: {{ .Values.image.repository }}:{{ .Values.image.tag }}
+        imagePullPolicy: {{ .Values.image.pullPolicy }}
         ports:
         - containerPort: {{ .Values.network.pod.port.number }}
