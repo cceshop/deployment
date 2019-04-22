@@ -5,7 +5,7 @@ metadata:
   name: {{ .Values.deployment.name }}
   namespace: {{ .Values.deployment.namespace }}
   labels:
-    app: {{ .Values.depoyment.name }}
+    app: {{ .Values.deployment.name }}
     version: {{ .Values.image.tag }}
 spec:
   ports:
@@ -13,5 +13,5 @@ spec:
     targetPort: {{ .Values.network.service.port.number }}
   type: {{ .Values.network.service.type }}
   selector:
-    app: {{ .Values.depoyment.name }}
+    app: {{ .Values.deployment.name }}
     version: {{ .Values.image.tag }}
