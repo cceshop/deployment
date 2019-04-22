@@ -1,0 +1,23 @@
+image:
+  repository: quay.io/cceshop/customer-check-cardid
+  tag: 0.0.1
+  pullPolicy: IfNotPresent
+
+deployment:
+  name: customer-check-cardid
+  namespace: cce
+  restartPolicy: OnFailure 
+  replicas: 3
+
+network:
+  pod:
+    port:
+      name: http
+      number: 80
+      protocol: HTTPS
+  service:
+    type: ClusterIP
+    port:
+      name: tcp
+      number: 80
+      protocol: TCP

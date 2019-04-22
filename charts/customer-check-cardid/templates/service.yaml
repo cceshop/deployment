@@ -1,0 +1,17 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: {{ .Values.depoyment.name }}
+  namespace: {{ .Values.deployment.namespace }}
+  labels:
+    app: {{ .Values.depoyment.name }}
+    version: {{ .Values.image.tag }}
+spec:
+  ports:
+  - port: {{ .Values.network.service.port.number }}
+    targetPort: {{ .Values.network.service.port.number }}
+  type: {{ .Values.network.service.type }}
+  selector:
+    app: {{ .Values.depoyment.name }}
+    version: {{ .Values.image.tag }}

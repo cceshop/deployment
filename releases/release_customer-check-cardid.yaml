@@ -1,0 +1,37 @@
+---
+apiVersion: flux.weave.works/v1beta1
+kind: HelmRelease
+metadata:
+  name: customer-check-cardid
+  namespace: cce
+  annotations:
+    flux.weave.works/automated: "true"
+    flux.weave.works/tag.tearoom-menu: semver:0.0.*
+spec:
+  releaseName: customer-check-cardid
+  chart:
+    git: ssh://git@github.com:cceshop/deployment.git
+    ref: master
+    path: charts/customer-check-cardid
+  values:
+    image:
+      repository: 'quay.io/cceshop/customer-check-cardid'
+      tag: '0.0.1'
+      pullPolicy: Always
+    deployment:
+      name: customer-check-cardid
+      namespace: cce
+      restartPolicy: OnFailure
+      replicas: 3
+    network:
+      pod:
+        port:
+          name: http
+          number: 80
+          protocol: HTTPS
+      service:
+        type: ClusterIP
+        port:
+          name: tcp
+          number: 80
+          protocol: TCP
