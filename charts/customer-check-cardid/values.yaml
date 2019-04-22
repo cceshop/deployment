@@ -1,7 +1,7 @@
 image:
   repository: quay.io/cceshop/customer-check-cardid
   tag: 0.0.1
-  pullPolicy: IfNotPresent
+  pullPolicy: Always
 
 deployment:
   name: customer-check-cardid
