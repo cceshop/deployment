@@ -2,24 +2,24 @@
 apiVersion: flux.weave.works/v1beta1
 kind: HelmRelease
 metadata:
-  name: customer-check-cardid
+  name: customer-check-birthnumber
   namespace: cce
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.customer-check-cardid: semver:0.0.*
+    flux.weave.works/tag.customer-check-birthnumber: semver:0.0.*
 spec:
-  releaseName: customer-check-cardid
+  releaseName: customer-check-birthnumber
   chart:
     git: ssh://git@github.com:cceshop/deployment.git
     ref: master
     path: charts/customer-checks
   values:
     image:
-      repository: 'quay.io/cceshop/customer-check-cardid'
+      repository: 'quay.io/cceshop/customer-check-birthnumber'
       tag: 'master'
       pullPolicy: Always
     deployment:
-      name: customer-check-cardid
+      name: customer-check-birthnumber
       namespace: cce
       restartPolicy: OnFailure
       replicas: 1
