@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: 'quay.io/cceshop/customer-check-birthnumber'
-      tag: 'master'
+      tag: '0.0.1'
       pullPolicy: Always
     deployment:
       name: customer-check-birthnumber
