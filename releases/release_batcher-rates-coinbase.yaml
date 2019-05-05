@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: batcher-rates-coinbase
   chart:
-    git: ssh://git@github.com/cceshop/deployment.git   # ssh://git@lmc-bitbucket/archi/flux-example.git
+    git: ssh://git@github.com/cceshop/deployment.git
     ref: master
     path: charts/batcher-rates-coinbase
   values:
