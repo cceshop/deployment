@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: 'quay.io/cceshop/customer-check-cardid'
-      tag: '0.0.2'
+      tag: 'master'
       pullPolicy: Always
     deployment:
       name: customer-check-cardid
