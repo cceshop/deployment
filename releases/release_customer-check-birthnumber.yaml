@@ -10,7 +10,7 @@ metadata:
 spec:
   releaseName: customer-check-birthnumber
   chart:
-    git: ssh://git@github.com:cceshop/deployment.git
+    git: ssh://git@github.com/cceshop/deployment.git
     ref: master
     path: charts/customer-checks
   values:

@@ -6,11 +6,11 @@ metadata:
   namespace: cce
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.tearoom-menu: semver:1.*.*
+    flux.weave.works/tag.batcher-rates-coinbase: semver:1.*.*
 spec:
   releaseName: batcher-rates-coinbase
   chart:
-    git: ssh://git@github.com:cceshop/deployment.git   # ssh://git@lmc-bitbucket/archi/flux-example.git
+    git: ssh://git@github.com/cceshop/deployment.git   # ssh://git@lmc-bitbucket/archi/flux-example.git
     ref: master
     path: charts/batcher-rates-coinbase
   values:
