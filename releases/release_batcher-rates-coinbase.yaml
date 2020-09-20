@@ -10,7 +10,6 @@ metadata:
 spec:
   releaseName: batcher-rates-coinbase
   chart:
-          #git: ssh://git@github.com/cceshop/deployment.git
     git: https://github.com/cceshop/deployment.git
     ref: master
     path: charts/batcher-rates-coinbase
