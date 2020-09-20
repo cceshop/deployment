@@ -5,8 +5,8 @@ metadata:
   name: batcher-rates-coinbase
   namespace: cce
   annotations:
-    flux.weave.works/automated: "true"
-    flux.weave.works/tag.batcher-rates-coinbase: semver:0.*.*
+    fluxcd.io/automated: "true"
+    fluxcd.io/tag.podinfod: semver:0.*.*
 spec:
   releaseName: batcher-rates-coinbase
   chart:
