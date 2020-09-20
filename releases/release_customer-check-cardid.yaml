@@ -6,11 +6,11 @@ metadata:
   namespace: cce
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.customer-check-cardid: semver:0.0.*
+    flux.weave.works/tag.customer-check-cardid: semver:0.*.*
 spec:
   releaseName: customer-check-cardid
   chart:
-    git: ssh://git@github.com/cceshop/deployment.git
+    git: https://github.com/cceshop/deployment.git
     ref: master
     path: charts/customer-checks
   values:
@@ -27,8 +27,8 @@ spec:
       pod:
         port:
           name: http
-          number: 80
-          protocol: HTTPS
+          number: 8080
+          protocol: HTTP
       service:
         type: ClusterIP
         port:

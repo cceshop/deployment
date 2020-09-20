@@ -13,8 +13,8 @@ network:
   pod:
     port:
       name: http
-      number: 80
-      protocol: HTTPS
+      number: 8080
+      protocol: HTTP
   service:
     type: ClusterIP
     port:
