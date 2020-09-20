@@ -6,7 +6,7 @@ metadata:
   namespace: cce
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.batcher-rates-coinbase: semver:1.*.*
+    flux.weave.works/tag.batcher-rates-coinbase: semver:0.*.*
 spec:
   releaseName: batcher-rates-coinbase
   chart:
@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: 'quay.io/cceshop/batcher-rates-coinbase'
-      tag: '1.0.0'
+      tag: '0.0.0'
       pullPolicy: Always
     deployment:
       name: batcher-rates-coinbase
