@@ -6,7 +6,7 @@ metadata:
   namespace: cce
   annotations:
     flux.weave.works/automated: "true"
-    flux.weave.works/tag.customer-check-birthnumber: semver:0.0.*
+    flux.weave.works/tag.customer-check-birthnumber: semver:0.*.*
 spec:
   releaseName: customer-check-birthnumber
   chart:
@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: 'quay.io/cceshop/customer-check-birthnumber'
-      tag: '0.0.2'
+      tag: '0.0.0'
       pullPolicy: Always
     deployment:
       name: customer-check-birthnumber
@@ -27,8 +27,8 @@ spec:
       pod:
         port:
           name: http
-          number: 80
-          protocol: HTTPS
+          number: 8080
+          protocol: HTTP
       service:
         type: ClusterIP
         port:
