@@ -10,7 +10,7 @@ metadata:
 spec:
   ports:
   - port: {{ .Values.network.service.port.number }}
-    targetPort: {{ .Values.network.service.port.number }}
+    targetPort: {{ .Values.network.pod.port.number }}
   type: {{ .Values.network.service.type }}
   selector:
     app: {{ .Values.deployment.name }}
