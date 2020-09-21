@@ -16,7 +16,7 @@ spec:
   values:
     image:
       repository: 'quay.io/cceshop/batcher-rates-coinbase'
-      tag: '39f75e5'
+      tag: '949586b'
       pullPolicy: Always
     deployment:
       name: batcher-rates-coinbase
